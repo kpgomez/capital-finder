@@ -60,7 +60,7 @@ class handler(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    server_address = ('localhost', 3000)
+    server_address = ('localhost', 8000)
     httpd = HTTPServer(server_address, handler)
     print(f'Starting httpd server on {server_address[0]}:{server_address[1]}')
     httpd.serve_forever()
