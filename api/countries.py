@@ -26,14 +26,14 @@ class handler(BaseHTTPRequestHandler):
 
         message = ''
 
-        if query['country']:
+        if name:
             url = f'https://restcountries.com/v3.1/name/{name}'
             response = requests.get(url)
             data = response.json()
-            capital = data[0]['capital'][0]
-            message += f'The capital of {name.capitalize()} is {capital.capitalize()}\n'
+            capital_city = data[0]['capital'][0]
+            message += f'The capital of {name.capitalize()} is {capital_city.capitalize()}\n'
 
-        if query['capital']:
+        if capital:
             url = f'https://restcountries.com/v3.1/capital/{capital}'
             response = requests.get(url)
             data = response.json()
