@@ -1,57 +1,44 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib import parse
-import requests # most popular python library
+import requests
 
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        path = self.path  # http://localhost:8000/capital-finder?name=thailand
-        print('url:', path)  # /capital-finder?name=thailand
+        path = self.path  # http://localhost:8000/capital-finder?country=thailand&capital=bangkok
+        print('url:', path)  # /capital-finder?country=thailand&capital=bangkok
 
         url_components = parse.urlsplit(path)
         print('url_components:', url_components)  # SplitResult(scheme='', netloc='', path='/capital-finder',
-        # query='name=thailand', fragment='')
+        # query='country=thailand&capital=bangkok', fragment='')
 
         query_string_list = parse.parse_qsl(url_components.query)
-        print('qsl:', query_string_list)  # [('name', 'thailand')]
+        print('qsl:', query_string_list)  # [('country', 'thailand'), ('capital', 'bangkok')]
 
         query = dict(query_string_list)
-        print('dictionary:', query)  # {'name': 'thailand'}
-
-        # name = query.get('name')
-        # print('name:', name)  # name: thailand
+        print('dictionary:', query)  # {'country': 'thailand', 'capital': 'bangkok'}
 
         name = query.get('country')
-        print('country:', name)  # country: None
+        print('country:', name)  # country: thailand
 
-        # name = country
-        # print('name: ', name)
+        capital = query.get('capital')
+        print('capital:', capital)  # capital: bangkok
 
-        capital = query.get('capital')  # None
-        print('capital:', capital)
-        #
         message = ''
-        #
-        #
-        url_country = f'https://restcountries.com/v3.1/name/{name}'
-        url_capital = f'https://restcountries.com/v3.1/capital/{capital}'
-        #
-        # country_response = requests.get(url_country)
-        capital_response = requests.get(url_capital)
-        # country_data = country_response.json()
-        capital_data = capital_response.json()
 
-        # query_items = []
+        if query['country']:
+            url = f'https://restcountries.com/v3.1/name/{name}'
+            response = requests.get(url)
+            data = response.json()
+            capital = data[0]['capital'][0]
+            message += f'The capital of {name.capitalize()} is {capital.capitalize()}\n'
 
-        # country_capital = (country_data[0]['capital'])
-        # print('capital:', country_capital)
-
-        capital_country = (capital_data[0]['name']['common'])
-
-        # if query['country']:
-        #     message += f'The capital of {name.capitalize()} is {country_capital[0].capitalize()}'
         if query['capital']:
-            message += f'{capital.capitalize()} is the capital of {capital_country.capitalize()}'
+            url = f'https://restcountries.com/v3.1/capital/{capital}'
+            response = requests.get(url)
+            data = response.json()
+            country = data[0]['name']['common']
+            message += f'{capital.capitalize()} is the capital of {country.capitalize()}\n'
 
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
