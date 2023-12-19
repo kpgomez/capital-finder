@@ -16,13 +16,13 @@ https://capital-finder-kp-gomez.vercel.app/api/countries?country=laos
 
 To find the name of country according to its capital, change capital name
 
-https://capital-finder-kp-gomez.vercel.app/api/countries?capital=bangkok
+https://capital-finder-kp-gomez.vercel.app/api/countries?capital=london
 
 ![name of capital example](/imgs/capital%20example.png)
 
 Change both to see both the capital and the name of a country
 
-https://capital-finder-kp-gomez.vercel.app/api/countries?country=thailand&capital=bangkok
+https://capital-finder-kp-gomez.vercel.app/api/countries?country=japan&capital=taipei
 
 ![name of country and capital example](/imgs/capital,%20country%20example.png)
 
