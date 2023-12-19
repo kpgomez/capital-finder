@@ -12,16 +12,19 @@ To find the capital city of a country, change country name. Example below
 
 https://capital-finder-kp-gomez.vercel.app/api/countries?country=laos
 
-![name of country example]()
+![name of country example](/imgs/country%20example.png)
 
 To find the name of country according to its capital, change capital name
 
 https://capital-finder-kp-gomez.vercel.app/api/countries?capital=bangkok
 
+![name of capital example](/imgs/capital%20example.png)
+
 Change both to see both the capital and the name of a country
 
 https://capital-finder-kp-gomez.vercel.app/api/countries?country=thailand&capital=bangkok
 
+![name of country and capital example](/imgs/capital,%20country%20example.png)
 
 ### Links and Resources
 - [Class 16 Demo](https://github.com/codefellows/seattle-code-python-401n8/tree/main/class-16/in-class-demo/api)
