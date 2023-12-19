@@ -8,19 +8,19 @@ capital specified.
 
 Deployed Site: https://vercel.com/kp-gomezs-projects/capital-finder-kp-gomez/Ak3Px5u4b1UZzjCYvvDjvhpn8DVk
 
-To find the capital city of a country, change country name. Example below
+To find the capital city of a country, change country name directly in the address bar.
 
 https://capital-finder-kp-gomez.vercel.app/api/countries?country=laos
 
 ![name of country example](/imgs/country%20example.png)
 
-To find the name of country according to its capital, change capital name
+To find the name of country according to its capital, change capital name in the address bar.
 
 https://capital-finder-kp-gomez.vercel.app/api/countries?capital=london
 
 ![name of capital example](/imgs/capital%20example.png)
 
-Change both to see both the capital and the name of a country
+Change both to see both the capital and the name of a country in the address bar.
 
 https://capital-finder-kp-gomez.vercel.app/api/countries?country=japan&capital=taipei
 
