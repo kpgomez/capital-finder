@@ -20,7 +20,7 @@ https://capital-finder-kp-gomez.vercel.app/api/countries?capital=london
 
 ![name of capital example](/imgs/capital%20example.png)
 
-To see the capital one country and the name of the same or a differenty country, change both arguments in the address bar.
+To see the capital of one country and the name of the same or a different country, change both arguments in the address bar.
 
 https://capital-finder-kp-gomez.vercel.app/api/countries?country=japan&capital=taipei
 
